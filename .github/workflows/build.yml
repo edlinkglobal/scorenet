@@ -1,7 +1,5 @@
-name: Build APK
-on:
-  push:
-    branches: [ main ]
+ name: Build APK
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,12 +11,10 @@ jobs:
           java-version: '17'
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.5'
-          channel: 'stable'
+          flutter-version: '3.24.5'
       - run: flutter pub get
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
         with:
           name: ScoreNet-APK
           path: build/app/outputs/flutter-apk/app-release.apk
-          
