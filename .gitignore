@@ -1,5 +1,6 @@
+ .env
+functions/.env
 .dart_tool/
 build/
-.env
-*.apk
-*.jpg
+*.lock
+ios/Pods/
